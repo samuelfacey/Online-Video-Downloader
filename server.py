@@ -10,8 +10,7 @@ def home():
     if request.method == 'POST': 
         link = request.form.get('link')
         format = request.form.get('format')
-        download(link,format)
-        return render_template('download.html')
+        return render_template('download.html', info = download(link,format))
 
     return render_template('index.html')
 
